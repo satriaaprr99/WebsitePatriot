@@ -30,6 +30,7 @@
 
     <livewire:styles />
     <livewire:scripts />
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
 </head>
 <body>
     <div id="app">
@@ -46,8 +47,8 @@
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3 pr-2"><a class="text-muted" href="#"><img class="bi" src="assets/img/instagram.png" width="24"></a></li>
-                <li class="ms-3 pr-2"><a class="text-muted" href="#"><img class="bi" src="assets/img/facebook.png" width="24"></a></li>
+                <li class="ms-3 pr-1"><a class="text-muted" href="#"><img class="bi" src="assets/img/instagram.png" width="24"></a></li>
+                <li class="ms-3 pr-1"><a class="text-muted" href="#"><img class="bi" src="assets/img/facebook.png" width="24"></a></li>
                 <li class="ms-3"><a class="text-muted" href="#"><img class="bi" src="assets/img/gmail.png" width="24"></a></li>
             </ul>
         </footer>
@@ -55,3 +56,20 @@
     </div>
 </body>
 </html>
+<script src="assets/sweetalert2/sweetalert2.all.min.js"></script>
+<script>
+        @if(Session::has('sukses'))
+        swal({
+            type: 'success',
+            title: 'Success!',
+            text: '{{ Session::get('sukses') }}'
+        });
+        @endif
+        @if(Session::has('error'))
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: '{{ Session::get('error') }}'
+        });
+        @endif
+    </script>

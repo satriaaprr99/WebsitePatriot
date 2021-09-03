@@ -15,3 +15,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Livewire\Home::class, '__invoke'])->name('home');
+Route::get('product', [App\Http\Livewire\ProductIndex::class, '__invoke'])->name('product');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'auth'], function () {
+      Route::get('/admin', 'AdminController@index')->name('admin');
+    });
+});

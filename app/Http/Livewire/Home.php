@@ -12,7 +12,7 @@ class Home extends Component
     {
         return view('livewire.home', [
             'category' => Category::take(5)->get(),
-            'product'  => Product::all(),
+            'product'  => Product::paginate(4),
         ]);
     }
 }

@@ -32,4 +32,11 @@ body {
 
 .discon .badge span {
     font-weight: 500;
+    border-radius: 50px;
+}
+
+.img-product {
+    margin-top: -25px;
+    padding-top: -25px;
+    top: -25px;
 }
